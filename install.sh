@@ -7,4 +7,6 @@ cd ../dwm/
 sudo make clean install
 cd ../dwmblocks/
 sudo make clean install
-
+sudo cp dwm.desptop /usr/share/xsessions/
+cp startup.sh ~/.startup.sh
+cp xsession ~/.xsession
