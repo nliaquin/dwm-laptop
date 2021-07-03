@@ -55,7 +55,7 @@ static const Layout layouts[] = {
 #include <X11/XF86keysym.h>
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_red, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "xfce-terminal", NULL };
+static const char *termcmd[]  = { "qterminal", NULL };
 static const char *volup[] = { "amixer", "set", "Master", "2+", NULL };
 static const char *voldn[] = { "amixer", "set", "Master", "2-", NULL };
 
