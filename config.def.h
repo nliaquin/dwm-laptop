@@ -13,7 +13,7 @@ static const char col_red[] = "#a30306";
 static const char *colors[][3] = {
     /*Scheme, foreground, background, border   */
     [SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-    [SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+    [SchemeSel]  = { col_gray4, col_red,  col_red  },
 };
 
 /* tagging */
@@ -54,7 +54,7 @@ static const Layout layouts[] = {
 /* commands */
 #include <X11/XF86keysym.h>
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_red, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "xfce-terminal", NULL };
 static const char *volup[] = { "amixer", "set", "Master", "2+", NULL };
 static const char *voldn[] = { "amixer", "set", "Master", "2-", NULL };
