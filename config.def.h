@@ -3,8 +3,8 @@ static const unsigned int borderpx  = 1; //order pixel of windows
 static const unsigned int snap = 32; //snap pixel
 static const int showbar = 1; //0 means no bar
 static const int topbar = 1; //0 means bottom bar
-static const char *fonts[] = { "monospace:size=12" };
-static const char dmenufont[] = "monospace:size=12";
+static const char *fonts[] = { "arial:size=12" };
+static const char dmenufont[] = "arial:size=12";
 static const char col_gray1[] = "#222222";
 static const char col_gray2[] = "#444444";
 static const char col_gray3[] = "#bbbbbb";
@@ -56,8 +56,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_red, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "qterminal", NULL };
-static const char *volup[] = { "amixer", "set", "Master", "2+", NULL };
-static const char *voldn[] = { "amixer", "set", "Master", "2-", NULL };
+static const char *volup[] = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", NULL };
+static const char *voldn[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%", NULL };
 
 static Key keys[] = {
     /* modifier, key, function, argument */
