@@ -7,7 +7,7 @@ static const unsigned int borderpx = 1;
 // snap pixel
 static const unsigned int snap = 32;
 
-// bar visibility (0 = invisible, 1 = visible
+// bar visibility (0 = invisible, 1 = visible)
 static const int showbar = 1;
 
 // bar location (0 = bottom, 1 = top)
@@ -28,7 +28,7 @@ static const char col_red[] = "#a30306";
 static const char *colors[][3] = {
     // fg, bg, border
 
-    [SchemeNorm] = { colr_gray3, col_gray1, col_gray2 },
+    [SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
     [SchemeSel] = { col_gray4, col_red, col_red },
 };
 
@@ -43,14 +43,17 @@ static const Rule rules[] = {
 
 
 /* Layouts */
-// factor of master area size
+// factor of master area size [0.05..0.95]
 static const float mfact = 0.55;
 
 // number of clients in master area
 static const int nmaster = 1;
 
-// 1 means respect hints in tiled resizals
+// 1 means respect size hints in tiled resizals
 static const int resizehints = 1;
+
+// 1 will force focus on the fullscreen window
+static const int lockfullscreen = 1;
 
 static const Layout layouts[] = {
     // symbol, arrange function
@@ -68,7 +71,7 @@ static const Layout layouts[] = {
     { MODKEY|ControlMask, KEY, toggleview, {.ui = 1 << TAG} }, \
     { MODKEY|ShiftMask, KEY, tag, {.ui = 1 << TAG} }, \
     { MODKEY|ControlMask|ShiftMask, KEY, toggletag, {.ui = 1 << TAG} },
-#define SHCMD(cmd) { .v = (const char*[]){ "/bin/bash", "-c", cmd, NULL } }
+#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 
 /* Commands */
