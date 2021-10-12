@@ -81,6 +81,8 @@ static const char *termcmd[] = { "qterminal", NULL };
 static const char *volup[] = { "/usr/bin/amixer", "set", "Master", "2%+", NULL };
 static const char *voldn[] = { "/usr/bin/amixer", "set", "Master", "2%-", NULL };
 static const char *prntscrn[] = { "/usr/bin/scrot", "%Y-%m-%d_%H-%M-%S_$wx$h.png", "-e 'mv $f /home/$USER/screenshots/'", NULL };
+static const char *bkltup[] = { "/usr/bin/brighnessctl", "set", "5%+", NULL };
+static const char *bkltdn[] = { "/usr/bin/brighnessctl", "set", "5%-", NULL };
 static Key keys[] = {
     /* modifier, key, function, argument */
     { MODKEY, XK_Return, spawn, {.v = dmenucmd } },
@@ -109,6 +111,8 @@ static Key keys[] = {
     { 0, XF86XK_AudioRaiseVolume, spawn, {.v = volup } },
     { 0, XF86XK_AudioLowerVolume, spawn, {.v = voldn } },
     { 0, XK_Print, spawn, {.v = prntscrn } },
+    { 0, XF86XK_MonBrightnessUp, spawn, {.v = bkltup } },
+    { 0, XF86XK_MonBrightnessDown, spawn, {.v = bkltdn } },
     TAGKEYS( XK_1, 0)
     TAGKEYS( XK_2, 1)
     TAGKEYS( XK_3, 2)
