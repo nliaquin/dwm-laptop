@@ -3,11 +3,11 @@ static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
     {"WIFI:", "cat /sys/class/net/wlan0/operstate", 10, 0},
 
+    {"MEM:", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g", 30, 0},
+
     {"BAT:", "cat /sys/class/power_supply/BAT0/capacity", 30, 0},
 
     {"", "cat /sys/class/power_supply/BAT0/status", 5, 0},
-
-    {"MEM:", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g", 30, 0},
 
     {"", "date '+%d/%m/%y'", 0, 0},
 

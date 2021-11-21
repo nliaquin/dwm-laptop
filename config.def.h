@@ -14,10 +14,10 @@ static const int showbar = 1;
 static const int topbar = 1;
 
 // bar font
-static const char *fonts[] = { "arial:size=12" };
+static const char *fonts[] = { "Liberation Mono:size=10" };
 
 // dmenu font
-static const char dmenufont[] = "arial:size=12";
+static const char dmenufont[] = "Liberation Mono:size=10";
 
 // colors
 static const char col_gray1[] = "#222222";
@@ -83,6 +83,7 @@ static const char *voldn[] = { "/usr/bin/amixer", "set", "Master", "2%-", NULL }
 static const char *prntscrn[] = { "/usr/bin/scrot", "%Y-%m-%d_%H-%M-%S_$wx$h.png", "-e 'mv $f /home/$USER/screenshots/'", NULL };
 static const char *bkltup[] = { "/usr/bin/brighnessctl", "set", "5%+", NULL };
 static const char *bkltdn[] = { "/usr/bin/brighnessctl", "set", "5%-", NULL };
+static const char *lockscrn[] = { "slock", NULL };
 static Key keys[] = {
     /* modifier, key, function, argument */
     { MODKEY, XK_Return, spawn, {.v = dmenucmd } },
@@ -106,6 +107,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask, XK_0, tag, {.ui = ~0 } },
     { MODKEY, XK_comma, focusmon, {.i = -1 } },
     { MODKEY, XK_period, focusmon, {.i = +1 } },
+    { MODKEY|ShiftMask, XK_l, spawn, {.v = lockscrn } },
     { MODKEY|ShiftMask, XK_comma,  tagmon, {.i = -1 } },
     { MODKEY|ShiftMask, XK_period, tagmon, {.i = +1 } },
     { 0, XF86XK_AudioRaiseVolume, spawn, {.v = volup } },
