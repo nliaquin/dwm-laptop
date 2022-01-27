@@ -19,5 +19,5 @@ Here are the additional bindings:
 
 ## Dependencies
 You will need to install the following packages (or change config.def.h to use a different font & terminal):
-qterminal
+alacritty
 ttf-liberation
