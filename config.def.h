@@ -77,7 +77,6 @@ static const Layout layouts[] = {
 /* Commands */
 static char dmenumon[2] = "0";
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_red, "-sf", col_gray4, NULL };
-static const char *termcmd[] = { "alacritty", NULL };
 static const char *volup[] = { "/usr/bin/amixer", "set", "Master", "2%+", NULL };
 static const char *voldn[] = { "/usr/bin/amixer", "set", "Master", "2%-", NULL };
 static const char *prntscrn[] = { "/usr/bin/scrot", "%Y-%m-%d_%H-%M-%S_$wx$h.png", "-e 'mv $f /home/$USER/screenshots/'", NULL };
@@ -87,7 +86,6 @@ static const char *lockscrn[] = { "slock", NULL };
 static Key keys[] = {
     /* modifier, key, function, argument */
     { MODKEY, XK_Return, spawn, {.v = dmenucmd } },
-    { MODKEY, XK_slash, spawn, {.v = termcmd } },
     { MODKEY, XK_b, togglebar, {0} },
     { MODKEY, XK_j, focusstack, {.i = +1 } },
     { MODKEY, XK_k, focusstack, {.i = -1 } },
